@@ -7,3 +7,6 @@ Eval compute in plus' 3 5.
 
 Definition id (A : Type)(x : A) : A := x.
 Eval compute in id nat 5.
+
+Definition id' : forall (A : Type), A -> A := fun A x => x.
+Eval compute in id' nat 5.
