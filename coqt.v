@@ -10,3 +10,6 @@ Eval compute in id nat 5.
 
 Definition id' : forall (A : Type), A -> A := fun A x => x.
 Eval compute in id' nat 5.
+
+Definition prop0 : forall (A : Prop), A -> A :=
+  fun A x => x.
