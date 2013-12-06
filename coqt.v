@@ -22,3 +22,9 @@ Definition ex0 : forall (A B : Prop), A -> (A -> B) -> B :=
 
 Definition ex1 : forall (A B C : Prop), (A -> B -> C) -> (B -> A -> C) :=
   fun A B C f g h => f h g.
+
+Definition prop0' : forall (A : Prop), A -> A.
+Proof.
+  intros.
+  apply H.
+Qed.
