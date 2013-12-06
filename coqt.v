@@ -29,3 +29,22 @@ Proof.
   apply H.
 Qed.
 Print prop0'.
+
+Goal forall (P Q : Prop), (forall P : Prop, (P -> Q) -> Q) -> ((P -> Q) -> P) -> P.
+Proof.
+  intros. (* intro. intro. intro. intro. *)
+  apply H0.
+  intro.
+  apply (H (P -> Q)).
+  apply (H P). (* apply H. *)
+  Qed.
+
+Goal forall (P Q : Prop), (forall P : Prop, (P -> Q) -> Q) -> ((P -> Q) -> P) ->  P.
+Proof.
+  intros.
+  apply H0.
+  intros.
+  apply (H Q).
+  intro.
+  apply H2.
+Qed.
