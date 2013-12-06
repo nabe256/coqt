@@ -28,3 +28,4 @@ Proof.
   intros.
   apply H.
 Qed.
+Print prop0'.
