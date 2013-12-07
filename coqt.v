@@ -61,4 +61,6 @@ Inductive list (A : Type) : Type :=
   | nil : list A
   | cons : A -> list A -> list A.
 
+Inductive False : Prop :=.
+
 Definition not (A : Prop) := A -> False.
