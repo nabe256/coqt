@@ -56,3 +56,7 @@ Proof.
   apply H.
   apply H1.
 Qed.
+
+Inductive list (A : Type) : Type :=
+  | nil : list A
+  | cons : A -> list A -> list A.
