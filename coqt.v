@@ -64,3 +64,19 @@ Inductive list (A : Type) : Type :=
 (* Inductive False : Prop :=. *)
 
 (* Definition not (A : Prop) := A -> False. *)
+
+Goal forall (P : Prop), P -> ~~P.
+Proof.
+  intros.
+  intro.
+  apply H0.
+  apply H.
+Qed.
+
+Goal forall (P : Prop), P -> ~~P.
+Proof.
+  unfold not.
+  intros.
+  apply H0.
+  apply H.
+Qed.
