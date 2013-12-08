@@ -14,12 +14,15 @@ Eval compute in id' nat 5.
 Definition prop0 : forall (A : Prop), A -> A :=
   fun A x => x.
 
+(* Haskell : (.) *)
 Definition prop1 : forall (A B C : Prop), (B -> C) -> (A -> B) -> (A -> C) :=
   fun A B C f g x => f (g x).
 
+(* Haskell : flip ($) *)
 Definition problem0 : forall (A B : Prop), A -> (A -> B) -> B :=
   fun A B x f => f x.
 
+(* Haskell : flip *)
 Definition problem1 : forall (A B C : Prop), (A -> B -> C) -> (B -> A -> C) :=
   fun A B C f g h => f h g.
 
