@@ -120,3 +120,8 @@ Proof.
   apply H0.
   apply H.
 Qed.
+
+Goal forall (P : Prop), P -> ~~P.
+Proof.
+  auto. (* info_auto *)
+Qed.
