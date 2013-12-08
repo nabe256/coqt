@@ -111,3 +111,12 @@ Qed.
 Inductive and (A B : Prop) : Prop :=
   conj : A -> B -> and A B.
 *)
+
+Goal forall (P Q : Prop), P /\ Q -> Q /\ P.
+Proof.
+  intros.
+  destruct H.
+  split. (* apply conj. *)
+  apply H0.
+  apply H.
+Qed.
