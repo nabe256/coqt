@@ -57,12 +57,14 @@ Proof.
   apply H1.
 Qed.
 
+(* Inductive:型定義 *)
 Inductive list (A : Type) : Type :=
   | nil : list A
   | cons : A -> list A -> list A.
 
 (* Inductive False : Prop :=. *)
 
+(* Definition:関数定義 *)
 (* Definition not (A : Prop) := A -> False. *)
 
 Goal forall (P : Prop), P -> ~~P.
