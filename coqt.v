@@ -88,3 +88,21 @@ Inductive or (A B : Prop) : Prop :=
   | or_introl : A -> or A B
   | or_intror : B -> or A B.
 *)
+
+Goal forall (P Q : Prop), P \/ Q -> Q \/ P.
+Proof.
+  intros.
+  case H. (* 場合分け *)
+  apply or_intror.
+  apply or_introl.
+Qed.
+
+Goal forall (P Q : Prop), P \/ Q -> Q \/ P.
+Proof.
+  intros.
+  destruct H.
+  right.
+  apply H.
+  left.
+  apply H.
+Qed.
