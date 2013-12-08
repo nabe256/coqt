@@ -125,3 +125,61 @@ Goal forall (P : Prop), P -> ~~P.
 Proof.
   auto. (* info_auto *)
 Qed.
+
+Definition problem3 : forall (P : Prop), ~(P /\ ~P).
+Proof.
+  intros.
+  intro.
+  case H.
+  intros.
+  apply H1.
+  apply H0.
+Qed.
+
+Definition problem3' : forall (P : Prop), ~(P /\ ~P).
+Proof.
+  intros.
+  intro.
+  destruct H.
+  apply H0.
+  apply H.
+Qed.
+
+Definition problem3'' : forall (P : Prop), ~(P /\ ~P).
+Proof.
+  intro.
+  unfold not.
+  intro.
+  destruct H.
+  apply H0.
+  apply H.
+Qed.
+
+Definition problem4 : forall (P Q : Prop), ~P \/ ~Q -> ~(P /\ Q).
+Proof.
+  intros.
+  intro.
+  destruct H0.
+  destruct H.
+  apply H.
+  apply H0.
+  apply H.
+  apply H1.
+Qed.
+
+Definition problem4' : forall (P Q : Prop), ~P \/ ~Q -> ~(P /\ Q).
+Proof.
+  intros.
+  intro.
+  case H0.
+  intros.
+  destruct H.
+  apply H.
+  apply H1.
+  apply H.
+  apply H2.
+Qed.
+
+Definition problem5 : forall (P : Prop), (forall (P : Prop), ~~P -> P) -> P \/ ~P.
+Proof.
+Admitted.
