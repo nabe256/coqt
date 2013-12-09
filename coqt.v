@@ -61,9 +61,11 @@ Proof.
 Qed.
 
 (* Inductive:型定義 *)
+(*
 Inductive list (A : Type) : Type :=
   | nil : list A
   | cons : A -> list A -> list A.
+*)
 
 (* Inductive False : Prop :=. *)
 
