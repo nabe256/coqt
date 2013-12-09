@@ -188,3 +188,11 @@ Qed.
 Definition problem5 : forall (P : Prop), (forall (P : Prop), ~~P -> P) -> P \/ ~P.
 Proof.
 Admitted.
+
+(*
+Fixpoint app (A : Type)(l l' : list A) : list A :=
+  match l with
+  | nil => l'
+  | cons x xs => cons x (app A xs l')
+  end.
+*)
