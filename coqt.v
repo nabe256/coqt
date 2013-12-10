@@ -196,3 +196,17 @@ Fixpoint app (A : Type)(l l' : list A) : list A :=
   | cons x xs => cons x (app A xs l')
   end.
 *)
+
+Require Import List.
+
+Theorem app_nil_r : forall (A : Type)(l : list A), l ++ nil = l.
+Proof.
+  intros.
+  induction l.
+
+  reflexivity.
+
+  simpl.
+  f_equal. (* apply (f_equal (cons a)). *)
+  apply IHl.
+Qed.
