@@ -187,7 +187,17 @@ Qed.
 
 Definition problem5 : forall (P : Prop), (forall (P : Prop), ~~P -> P) -> P \/ ~P.
 Proof.
-Admitted.
+  unfold not.
+  intros.
+  apply H.
+  intros.
+  apply H0.
+  right.
+  intro.
+  apply H0.
+  left.
+  apply H1.
+Qed.
 
 (*
 Fixpoint app (A : Type)(l l' : list A) : list A :=
