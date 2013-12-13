@@ -247,3 +247,13 @@ Proof.
   f_equal.
   apply IHl1.
 Qed.
+
+Theorem rev_involutive : forall (A : Type)(l : list A), rev (rev l) = l.
+Proof.
+  intros.
+  induction l.
+
+  reflexivity.
+
+  simpl.
+Admitted.
