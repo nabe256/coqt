@@ -256,4 +256,8 @@ Proof.
   reflexivity.
 
   simpl.
-Admitted.
+  rewrite rev_app_distr.
+  simpl.
+  f_equal.
+  apply IHl.
+Qed.
