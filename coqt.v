@@ -269,3 +269,15 @@ Fixpoint fold_right (A B : Type)(f : B -> A -> A)(a0 : A)(l : list B) : A :=
   | b :: t => f b (fold_right A B f a0 t)
   end.
 *)
+
+Theorem fold_right_app : forall (A B : Type)(f : B -> A -> A)(l l' : list B)(i : A), fold_right f i (l ++ l') = fold_right f (fold_right f i l') l.
+Proof.
+  intros.
+  induction l.
+
+  reflexivity.
+
+  simpl.
+  f_equal.
+  apply IHl.
+Qed.
