@@ -261,3 +261,11 @@ Proof.
   f_equal.
   apply IHl.
 Qed.
+
+(*
+Fixpoint fold_right (A B : Type)(f : B -> A -> A)(a0 : A)(l : list B) : A :=
+  match l with
+  | nil => a0
+  | b :: t => f b (fold_right A B f a0 t)
+  end.
+*)
